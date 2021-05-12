@@ -18,6 +18,8 @@ public class Main {
         int accMenu;
         int bankMenu;
 
+        Bank bank = new Bank();
+
         Account acc = new Account();
 
         Human pn = new Human();
@@ -46,6 +48,7 @@ public class Main {
                 System.out.println("Now please create your password Mr." + pn.getLastName() + ", password must be between 4-8 numbers!");
                 pn.setPassword(Integer.parseInt(sc.nextLine()));
                 System.out.println("You have successfully created an account!");
+                System.out.println("Bank password is: " + bank.bankPassword());
                 System.out.println("What do you want to do now?");
                 System.out.println("1. Create account");
                 System.out.println("2. Log in into account");
@@ -54,6 +57,9 @@ public class Main {
                 choice = Integer.parseInt(sc.nextLine());
 
                 while (choice == 2) {
+                    System.out.println(Arrays.toString(accId));
+                    System.out.println("Please enter Id account index you want to log: ");
+                    idLength = Integer.parseInt(sc.nextLine());
                     System.out.println("Please enter your password: ");
                     pn.assertCorrectPassword(Integer.parseInt(sc.nextLine()));
                     System.out.println("Welcome Mr." + pn.getLastName() + "!");
@@ -97,7 +103,11 @@ public class Main {
                 }
 
                 while (choice == 3) {
+                    System.out.println("Please enter a password: ");
+                    bank.assertCorrectPassword(sc.nextLine());
+                    System.out.println();
                     System.out.println("Welcome administrator!");
+                    System.out.println("Our bank funds are: $" + bank.setBankBalance() + " at the moment!");
                     System.out.println("What do you want to do now?");
                     System.out.println(Arrays.toString(accId));
                     System.out.println("1. Create account");
@@ -133,6 +143,7 @@ public class Main {
 
                 if (choice == 4) {
                     System.out.println("Thank you for visiting our application Mr." + pn.getFullName() + " see you next time!");
+                    break;
                 }
             }
             if (mainMenu == 2) {
@@ -159,6 +170,7 @@ public class Main {
                 System.out.println("Now please create your password Mr." + pn.getLastName() + ", password must be between 4-8 numbers!");
                 pn.setPassword(Integer.parseInt(sc.nextLine()));
                 System.out.println("You have successfully created an account!");
+                System.out.println("Bank password is: " + bank.bankPassword());
                 System.out.println("What do you want to do now?");
                 System.out.println("1. Create account");
                 System.out.println("2. Log in into account");
@@ -167,6 +179,9 @@ public class Main {
                 choice = Integer.parseInt(sc.nextLine());
 
                 while (choice == 2) {
+                    System.out.println(Arrays.toString(accId));
+                    System.out.println("Please enter Id account index you want to log: ");
+                    idLength = Integer.parseInt(sc.nextLine());
                     System.out.println("Please enter your password: ");
                     pn.assertCorrectPassword(Integer.parseInt(sc.nextLine()));
                     System.out.println("Welcome Mr." + pn.getLastName() + "!");
@@ -210,7 +225,11 @@ public class Main {
                 }
 
                 while (choice == 3) {
+                    System.out.println("Please enter a password: ");
+                    bank.assertCorrectPassword(sc.nextLine());
+                    System.out.println();
                     System.out.println("Welcome administrator!");
+                    System.out.println("Our bank funds are: $" + bank.setBankBalance() + " at the moment!");
                     System.out.println("What do you want to do now?");
                     System.out.println(Arrays.toString(accId));
                     System.out.println("1. Create account");
@@ -246,6 +265,7 @@ public class Main {
 
                 if (choice == 4) {
                     System.out.println("Thank you for visiting our application Mr." + pn.getFullName() + " see you next time!");
+                    break;
                 }
             }
             if (mainMenu == 2) {
